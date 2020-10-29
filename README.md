@@ -69,7 +69,7 @@ paint marker, so that the orientation with the 3-pin male header
 on the F103 stamp is unmistakeable.
 
 ### BME280 module
-![BME280 module attached](pics/1-ready)
+![BME280 module attached](pics/1-ready.jpg)
 Solder a 4-pin male header to the bottom of the module board
 (NOT the component side).
 The module has space for 6 pins; do not occupy CSB and SDO, only VCC, GND,
