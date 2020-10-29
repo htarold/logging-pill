@@ -37,7 +37,7 @@ terminated at both ends with female 1x3 Dupont connectors,
 [an example](https://www.aliexpress.com/item/32821638049.html).
 6. 2xAA (or 2xAAA if you are severely space constrained) battery
 holder,
-[an exmaple](https://www.aliexpress.com/item/32818907820.html), with
+[an example](https://www.aliexpress.com/item/32818907820.html), with
 appropriate cells.
 7. Some heat shrink tubing, 1.5mm.
 8. White paint marker.
@@ -69,7 +69,7 @@ paint marker, so that the orientation with the 3-pin male header
 on the F103 stamp is unmistakeable.
 
 ### BME280 module
-[BME280 module attached](pics/1-ready)
+![BME280 module attached](pics/1-ready)
 Solder a 4-pin male header to the bottom of the module board
 (NOT the component side).
 The module has space for 6 pins; do not occupy CSB and SDO, only VCC, GND,
