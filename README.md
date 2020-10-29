@@ -7,7 +7,7 @@ Data are saved to the F103's own flash, so not even an SD card
 is needed.  There is enough space for at least 11,000 records,
 which translates to 4 months duration if logging every 15 minutes.
 
-![Overall](pics/0-overall.jps)
+![Overall](pics/0-overall.jpg)
 
 This document describes how to assemble the electronics (you'll
 need to know how to solder), how to upload the programming, and
