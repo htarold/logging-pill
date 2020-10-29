@@ -37,7 +37,7 @@ terminated at both ends with female 1x3 Dupont connectors,
 [an example](https://www.aliexpress.com/item/32821638049.html).
 6. 2xAA (or 2xAAA if you are severely space constrained) battery
 holder,
-[an exmaple](https://www.aliexpress.com/item/32818907820.html), with
+[an example](https://www.aliexpress.com/item/32818907820.html), with
 appropriate cells.
 7. Some heat shrink tubing, 1.5mm.
 8. White paint marker.
