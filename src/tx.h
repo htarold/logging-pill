@@ -22,7 +22,10 @@ void tx_putdec(int16_t d);
 void tx_putdec32(int32_t d);
 void tx_puthex(uint8_t x);
 void tx_puthex32(uint32_t x);
+void tx_puthex64(uint64_t x);
 void tx_msg(char * s, int16_t d);
+void tx_msg32(char * s, int32_t d);
+void tx_msg32x(char * s, uint32_t d);
 void tx_putpgms(const char * s);
 #define tx_bh() /* nothing */
 

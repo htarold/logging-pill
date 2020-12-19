@@ -7,7 +7,7 @@
 #endif
 #include "fmt.h"
 
-char fmt_buf[12];
+char fmt_buf[20];
 
 #ifdef FMT_DEBUG
 static void init_buf(void)
@@ -74,11 +74,11 @@ char * fmt_x(uint8_t d)
   fmt_buf[--i] = fmt_n(d);
   return(fmt_buf+i);
 }
+static const char PROGMEM hexchars[] = "0123456789abcdef";
 char * fmt_32x(uint32_t x)
 {
   uint8_t i;
   char * bufp;
-  static const char PROGMEM hexchars[] = "0123456789abcdef";
   init_buf();
   bufp = fmt_buf;
   *bufp++ = '0';
@@ -90,4 +90,16 @@ char * fmt_32x(uint32_t x)
   *bufp = '\0';
   return(fmt_buf);
 }
-
+char * fmt_64x(uint64_t x)
+{
+  uint8_t i;
+  char * bufp;
+  init_buf();
+  bufp = fmt_buf + 2 + 16;
+  *bufp-- = '\0';
+  for (i = 0; i < 16; i++, x >>= 4)
+    *bufp-- = pgm_read_byte_near(hexchars + ((x & 0xf)));
+  *bufp-- = 'x';
+  *bufp = '0';
+  return bufp;
+}

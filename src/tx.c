@@ -40,10 +40,23 @@ void tx_putdec(int16_t d) { tx_puts(fmt_i16d((int16_t)d)); }
 void tx_putdec32(int32_t d) { tx_puts(fmt_i32d(d)); }
 void tx_puthex(uint8_t x) { tx_puts(fmt_x(x)); }
 void tx_puthex32(uint32_t x) { tx_puts(fmt_32x(x)); }
+void tx_puthex64(uint64_t x) { tx_puts(fmt_64x(x)); }
 void tx_msg(char * s, int16_t d)
 {
   tx_puts(s);
   tx_putdec(d);
+  tx_puts("\r\n");
+}
+void tx_msg32(char * s, int32_t d)
+{
+  tx_puts(s);
+  tx_putdec32(d);
+  tx_puts("\r\n");
+}
+void tx_msg32x(char * s, uint32_t d)
+{
+  tx_puts(s);
+  tx_puthex32(d);
   tx_puts("\r\n");
 }
 void tx_putpgms(const char * s)
