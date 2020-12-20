@@ -86,31 +86,6 @@ to 3.3.  There are 2 such pairs; I chose the pair closest to the
 4-pin 90-degree debug header in order to use the header as
 strain relief for the holder leads.
 
-### Remove power LED (optional)
-![Power indicator LED](pics/6-led.jpg)
-There are 2 LEDs on the board, one marked PWR (red) and the
-other marked PC13 (green).  You can temporarily power on the
-stamp to identify the power LED if you are unsure.
-
-Removing this power LED is a little tricky.  If you do not remove it,
-the power drain will be higher, but if you intend to run the
-logger only at high sample rates (say every couple of seconds),
-then it might be ok to leave the LED alone.
-
-An easy to achieve this is to melt a solder blob (normal leaded solder)
-onto one end of the LED, then stretch the blob to the other end.
-The blob needs to be big enough for this to happen.  When both ends
-are thus engulfed by solder, go in with your stainless steel pointy
-tweezers and pick up the LED.  Then wick up the solder if it
-bridges the LED pads.
-
-After removing the LED, you MUST clean the area with an old tooth
-brush and isopropyl alcohol or a commercial flux remover.
-Dab the area dry with lint-free tissue.  You'll need to repeat this
-a few times to get it clean.  If you do not clean this area, the
-crystal (black rectangle next to the LED) may later refuse to
-start oscillating due to conductivity between the pins.
-
 ## Programming
 ![Bootloader mode](pics/5-boot-mode.jpg)
 After the hardware has been assembled, you'll want to upload the file
