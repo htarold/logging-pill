@@ -7,8 +7,9 @@
 #include <libopencm3/stm32/rtc.h>
 #include <libopencm3/cm3/nvic.h>
 #include <libopencm3/stm32/exti.h>
+#include <string.h>
 #include "cal32.h"
-#define DBG
+#undef DBG
 #include "dbg.h"
 
 static const uint8_t monthdays[12] = {
@@ -45,14 +46,14 @@ time_t cal_make_time(struct tm * tmp)
   dbg(tx_puts("Returning from cal_make_time\r\n"));
   return(t);
 }
-
 int8_t cal_make_cal(struct tm * tmp, time_t t)
 {
   time_t now;
   uint32_t inc;
 
   now = 0;
-  for (tmp->tm_year = 0; now < t; tmp->tm_year++) {
+  memset(tmp, 0, sizeof(*tmp));
+  for (tmp->tm_year = 0; ; tmp->tm_year++) {
     if (tmp->tm_year >= 99) return(-1);
     inc = 365 * 86400;
     if (isleap(tmp->tm_year)) inc += 86400;
@@ -86,6 +87,7 @@ int8_t cal_make_cal(struct tm * tmp, time_t t)
   return(0);
 }
 
+
 static void print_field(char * p, uint8_t val, char sep)
 {
   p[0] = (val/10) + '0';
@@ -97,7 +99,7 @@ char * cal_print(struct tm * tmp, char buf[sizeof("20-12-31,19:20:21")])
   char * start;
   start = buf;
   print_field(buf, tmp->tm_year, '-');
-  print_field(buf += 3, tmp->tm_mon, '-');
+  print_field(buf += 3, tmp->tm_mon + 1, '-');
   print_field(buf += 3, tmp->tm_mday, ',');
   print_field(buf += 3, tmp->tm_hour, ':');
   print_field(buf += 3, tmp->tm_min, ':');

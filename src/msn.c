@@ -49,6 +49,13 @@ void msn_init(uint8_t data_bytes_per_record)
   msn_flash_limit |= (128*1024);
   msn_data_limit = msn_flash_limit
                  - (sizeof(time_t) + data_bytes_per_record);
+  {
+    uint32_t nr;
+    nr = (msn_data_limit - msn_data_start)/
+         (sizeof(time_t) + data_bytes_per_record);
+    msn_data_limit = (nr * (sizeof(time_t) + data_bytes_per_record)) +
+                      msn_data_start;
+  }
 
   msn.record_bytes = data_bytes_per_record;
   dbg(msg32x("         _etext = ", (uint32_t)&_etext));

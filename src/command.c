@@ -101,6 +101,7 @@ static time_t read_time(struct tm * tmp)
     tmp->tm_year = val;
     tmp->tm_mon = read_num();
     if (tmp->tm_mon < 1 || tmp->tm_mon > 12) continue;
+    tmp->tm_mon--;
     tmp->tm_mday = read_num();
     if (tmp->tm_mday < 1 || tmp->tm_mday > 31) continue;
     tmp->tm_hour = read_num();
