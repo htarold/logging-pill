@@ -182,6 +182,9 @@ Now if you hit *r* the logger will continue its logging cycle.  If
 you want to change the logging parameters (such as logging
 interval), you need to erase existing data first.
 
+## Example data
+![Example plot](pics/dec20.png)
+
 ## Thanks
 If you build this I would be interested in any feedback.  I know
 it's a pain that the clock time is lost whenever power is
